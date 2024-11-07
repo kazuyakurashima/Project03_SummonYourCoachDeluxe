@@ -12,6 +12,7 @@ body {
     background-repeat: repeat; */
 }
 
+/* topの範囲は、helloまで */
 /* 表示を真ん中に揃えます */
 .top {
     text-align: center;
@@ -29,14 +30,17 @@ button {
     font-size: 24px;
     cursor: pointer;
     margin: 50px;
+    padding: 10px 40px;
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    text-align: center;
 }
 
 button:hover {
     background-color: #ccc;
 }
+
 
 .view {
     width: 75%;
@@ -44,10 +48,10 @@ button:hover {
     max: width 200px;
     /* スマホでも見れるピクセル */
     display:none;
-    /* はじめにリンク切れが表示されないように */
+    /* はじめは消えててね */
     cursor: pointer;
-    margin:auto;
-    /* 親要素の中央に自動的に整列 */
+    margin:50px;
+    /* 拡大しても文字が消えないように */
     transition: transform 0.3s ease;
     /* 0.3行で滑らかに変更。 */
 }
@@ -60,14 +64,9 @@ button:hover {
 /* なにもないのは、HTMLタグそのもの */
 /* .（ドット）は、「クラス」につける */
 /* #（ハッシュ）は、「id」につける*/
-#result {
-    font-size: 24px;
-    font-family: Georgia, serif;
-    color: #555555;
-    margin: 30px;
-}
 
-#hello {
+
+#hello,#result,#question {
     font-size: 36px;
     /* 質問の倍のサイズ */
     font-family: Georgia, serif;
@@ -78,33 +77,19 @@ button:hover {
     padding: 20px 40px;
     /* 質問ボックスより余白を少し増やす */
     margin: 20px 100px;
-    text-align: left;
     width: auto;
-
-
-#question {
-    font-size: 24px;
-    font-family: Georgia, serif;
-    color: #555555;
-    background-color: #e0e0e0;
-    /* 回答より少し濃い背景色 */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px 30px;
-    margin: 100px 20px 50px 50px;
-    text-align: center;
-    width: auto;
-}
-
-
-
-#questionContainer {
     display: none;
+    /* はじめは消えててね */
 }
-/* 初期状態では質問回答は非表示にしておく */
+
+
+#hello {
+    text-align: left;
+}
+
 
 .choice-btn {
-    font-size: 24px;
+    font-size: 30px;
     font-family: Georgia, serif;
     color: #333333;
     background-color: #f8f8f8;
@@ -115,6 +100,7 @@ button:hover {
     width: auto;
     cursor: pointer;
     height: auto;
+    text-align: left;
 }
 
 .choice-btn:hover {
