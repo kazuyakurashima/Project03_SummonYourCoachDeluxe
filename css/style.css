@@ -1,17 +1,18 @@
 /* ここから下に記載していく */
 
 body {
-    display: flex;
+    /* display: flex;
     justify-content:center;
-    align-items: center;
+    align-items: center; */
     font-family: Georgia, serif;
 
     background-image: url('../img/background.png');
-    background-size: aut;
+    /* background-size: auto;
     background-position: center;
-    background-repeat: repeat;
+    background-repeat: repeat; */
 }
 
+/* 表示を真ん中に揃えます */
 .top {
     text-align: center;
 }
@@ -31,7 +32,6 @@ button {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 5px;
-
 }
 
 button:hover {
@@ -40,12 +40,14 @@ button:hover {
 
 .view {
     width: 75%;
+    /* この要素の幅を、親要素の75%に設定 */
     max: width 200px;
     /* スマホでも見れるピクセル */
     display:none;
     /* はじめにリンク切れが表示されないように */
     cursor: pointer;
     margin:auto;
+    /* 親要素の中央に自動的に整列 */
     transition: transform 0.3s ease;
     /* 0.3行で滑らかに変更。 */
 }
@@ -55,13 +57,30 @@ button:hover {
     /* ホバー時に少し拡大 */
 }
 
-
-#result,#hello {
+/* なにもないのは、HTMLタグそのもの */
+/* .（ドット）は、「クラス」につける */
+/* #（ハッシュ）は、「id」につける*/
+#result {
     font-size: 24px;
     font-family: Georgia, serif;
     color: #555555;
     margin: 30px;
 }
+
+#hello {
+    font-size: 36px;
+    /* 質問の倍のサイズ */
+    font-family: Georgia, serif;
+    color: #555555;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px 40px;
+    /* 質問ボックスより余白を少し増やす */
+    margin: 20px 100px;
+    text-align: left;
+    width: auto;
+
 
 #question {
     font-size: 24px;
@@ -79,7 +98,6 @@ button:hover {
 
 
 
-/* クラスセレクターではなく、idセレクターは「#」をつかう */
 #questionContainer {
     display: none;
 }
@@ -102,18 +120,3 @@ button:hover {
 .choice-btn:hover {
     background-color: lightgray;
 }
-
-
-#hello {
-    font-size: 36px;
-    /* 質問の倍のサイズ */
-    font-family: Georgia, serif;
-    color: #555555;
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px 40px;
-    /* 質問ボックスより余白を少し増やす */
-    margin: 20px 100px;
-    text-align: left;
-    width: auto;

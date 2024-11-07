@@ -1,15 +1,18 @@
-// コーチを選ぶボタンがクリックされたときの動作設定
+// コーチ召喚ボタンがクリックされたときの動作設定
 $("#btn").on("click", function () {
     
+    $("h1").hide();
+    $("#btn").hide();  
+
     // Math.floorは、切り捨てて整数化させる関数
     // Math.random()は、０以上１未満の小数をランダムに生成する関数
     let num = Math.floor(Math.random() * 3);
     
-    // コーチ選択
+    // 変数宣言（コーチ情報）
     let coachName = "";
     let imagePath = "";
     let helloMessage = "";
-    //質問
+    //変数宣言（質問・答え・助言）
     let questionText = "";
     let answer1 = "";
     let answer2 = "";
@@ -74,36 +77,34 @@ $("#btn").on("click", function () {
         advice4 = "オーケー、あなたサムライみたい、ぜんぜんまっすぐいく、でも、ワタシいう。プロセスもみる！リーダーシップ、これね、ただゴールいくじゃなくて、みんなつれていくことね。ゴールいくはオーケー。でも、チームもサムライみたい大事よ！";
     }
 
-    // コーチ情報をHTMLに表示する
-    $("#result").html(coachName);
-    $("#coachImage").attr("src", imagePath).show();
+    // コーチネームを表示する   →<p id="result"> coachName </p>
+    $("#result").text(coachName).show();
     // attr=attribute。src（画像のファイル場所）に、コーチの画像場所の属性を与えた
-    $("#hello").html(helloMessage);
+    $("#coachImage").attr("src", imagePath).show();
+    // コーチ挨拶を表示する     →<p id="hello"> helloMessage </p>
+    $("#hello").html(helloMessage).show();
+
 
 
 
     // 質問
     // 画像をクリックしたときの動作
     $("#coachImage").on("click", function () {
-        $("h1").hide();
-        $("#btn").hide();  
         $("#hello").hide();
-    // 挨拶文を消して、質問の準備をした
 
-    // 質問と回答エリアを表示する
-    // 初期状態では見えないようにdisplayをnoneにしていたから表示をする
-    $("#questionContainer").show();
-    // 質問テキストを設定する
-    $("#question").text(questionText);
+    // 質問テキストを表示する
+    $("#question").text(questionText).show();
         
-    // 回答を作る
-        $("#choices").append(`<li><button id="choice1" class="choice-btn">${answer1}</button><li>`);
-        $("#choices").append(`<li><button id="choice2" class="choice-btn">${answer2}</button><li>`);
-        $("#choices").append(`<li><button id="choice3" class="choice-btn">${answer3}</button><li>`);
-        $("#choices").append(`<li><button id="choice4" class="choice-btn">${answer4}</button><li>`);
+    // 回答を作る   append:付け加える
+        $("#choices").append(`<button id="choice1" class="choice-btn">${answer1}</button>`);
+        $("#choices").append(`<button id="choice2" class="choice-btn">${answer2}</button>`);
+        $("#choices").append(`<button id="choice3" class="choice-btn">${answer3}</button>`);
+        $("#choices").append(`<button id="choice4" class="choice-btn">${answer4}</button>`);
         // バッククォート（｀）を使うことで、変数の中身${answer}を表示できます！！！ややこしいぜ！
         // choice-btnはcssで使用
         // idはクリックイベントをするのに設定した
+        
+
         
         // 各回答ボタンにクリックイベントを設定し、助言を表示
 
