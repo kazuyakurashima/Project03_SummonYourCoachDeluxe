@@ -1,30 +1,20 @@
-/* ここから下に記載していく */
-
+/*
+Coach Summoning Section
+================================================ */
 body {
-    /* display: flex;
-    justify-content:center;
-    align-items: center; */
     font-family: Georgia, serif;
-
     background-image: url('../img/background.png');
-    /* background-size: auto;
-    background-position: center;
-    background-repeat: repeat; */
 }
-
-/* topの範囲は、helloまで */
-/* 表示を真ん中に揃えます */
 .top {
     text-align: center;
+/* topの範囲は、helloまで */
+/* 表示を真ん中に揃えます */
 }
-
-
 h1 {
     color: #4F4F4F;
     font-size: 36px;
     margin: 50px 0;
 }
-
 button {
     color:#4F4F4F;
     font-size: 24px;
@@ -36,12 +26,9 @@ button {
     border-radius: 5px;
     text-align: center;
 }
-
 button:hover {
     background-color: #ccc;
 }
-
-
 .view {
     width: 75%;
     /* この要素の幅を、親要素の75%に設定 */
@@ -55,18 +42,19 @@ button:hover {
     transition: transform 0.3s ease;
     /* 0.3行で滑らかに変更。 */
 }
-
 .view:hover {
     transform: scale(1.05);
     /* ホバー時に少し拡大 */
 }
 
+
+/*
+Question Section
+================================================ */
+#hello,#result,#question {
 /* なにもないのは、HTMLタグそのもの */
 /* .（ドット）は、「クラス」につける */
 /* #（ハッシュ）は、「id」につける*/
-
-
-#hello,#result,#question {
     font-size: 36px;
     /* 質問の倍のサイズ */
     font-family: Georgia, serif;
@@ -81,13 +69,9 @@ button:hover {
     display: none;
     /* はじめは消えててね */
 }
-
-
 #hello {
     text-align: left;
 }
-
-
 .choice-btn {
     font-size: 30px;
     font-family: Georgia, serif;
@@ -102,7 +86,6 @@ button:hover {
     height: auto;
     text-align: left;
 }
-
 .choice-btn:hover {
     background-color: lightgray;
 }

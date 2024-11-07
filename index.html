@@ -1,46 +1,39 @@
 <!DOCTYPE html>
 <html lang="ja">
-<!-- 最初の設定は終わっています　必要な方は触ってください -->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- タイトル定義 -->
+  <!-- タイトル設定 -->
     <title>Summon Your Coach!</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-  <!-- ファビコン入れたよ！ -->  
+  <!-- ファビコン設定 -->  
     <link rel="icon" type="image/png" href="./img/fab.png">
 </head>
-<!-- 最初の設定は終わっています　必要な方は触ってください -->
-
-
 <body>
-  <!-- ここから下にコードを書く -->
 
-  <!-- 初期画面（コーチ選択） -->
-   <div class="top">
+<!-- Coach Selection Screen
+================================================ -->
+   <section class="top">
     <h1>究極のコーチ、ただいま降臨準備中、、、<br>震えて待て！</h1>
     <button id="btn">出でよ！召喚の時だ！</button>
-
-  <!-- ボダンが押された後の表示 -->
     <p id="result"></p>
     <img id="coachImage" class="view" src="" alt="コーチ画像">
     <p id="hello"></p>
-  </div>
+   </section>
 
-  <!-- 質問 -->
-   <div id="questionContainer">
+<!-- Question Section
+================================================ -->
+   <section id="questionContainer">
     <p id="question"></p>
     <p id="choices"></p>
-  </div>
+   </section>
 
-      <!-- 必ず、jQueryは自分で作成したjs/test.jsより上に貼り付けること！！！ -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-      
-      <script src="js/main.js"></script> 
-  <!-- ここから上にコードを書く -->
+<!-- Loading jQuery
+================================================ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>      
+    <script src="js/main.js"></script> 
+
 </body>
-
 </html>

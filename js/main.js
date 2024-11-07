@@ -1,13 +1,12 @@
-// コーチ召喚ボタンがクリックされたときの動作設定
+// Coach Summoning Section
+// ================================================
 $("#btn").on("click", function () {
-    
     $("h1").hide();
     $("#btn").hide();  
 
     // Math.floorは、切り捨てて整数化させる関数
     // Math.random()は、０以上１未満の小数をランダムに生成する関数
     let num = Math.floor(Math.random() * 3);
-    
     // 変数宣言（コーチ情報）
     let coachName = "";
     let imagePath = "";
@@ -39,9 +38,7 @@ $("#btn").on("click", function () {
         advice1 = "ほんま、情報ぎっちり集めるんはあんたのええとこや！でもな、完璧主義でやりすぎると、タイミング逃してまうで？『ま、7割でええか〜』思うて行ったら、びっくりするぐらい話早まるかもやで！";
         advice2 = "あんた、みんなの世話焼くんうまいなぁ〜！でもな、ちょっと一回『ほんまにやりたいこと』考えてみぃ？リーダーシップもな、ずっと『ええ人』しとるんやのうて、自分の意志出していくとこから始まんねん！";
         advice3 = "いや〜さすが、アイディアまんまんで、ほんま頼もしいなぁ！けどな、後ろついてくるみんなが『ちょっと待ってーな！』って言うとるかも知れんで？たまにはスピードちょっと緩めて、みんな一緒に盛り上がれるようにしぃや！";
-        advice4 = "おお、兄さん姉さん、ほんまガンガンいっとるな！でもな、目ぇ見張るんも大事やけど、たまにはプロセスも大事にしぃや〜。リーダーシップいうのは、ゴールにひとりで突っ走るんやなくて、みんな引っ張っていくもんやで！";
-
-        
+        advice4 = "おお、兄さん姉さん、ほんまガンガンいっとるな！でもな、目ぇ見張るんも大事やけど、たまにはプロセスも大事にしぃや〜。リーダーシップいうのは、ゴールにひとりで突っ走るんやなくて、みんな引っ張っていくもんやで！";  
     } else if (num === 1) {
         coachName = "あなたの特別コーチは、サムライ「斬鉄之介（ざんてつのすけ）」です！"
         imagePath="./img/samurai.png";
@@ -57,8 +54,7 @@ $("#btn").on("click", function () {
         advice1 = "そなた、さながら城の番人のごとく、情報をかき集め、完璧を求める御仁なり。しかし、急がぬ者は戦（いくさ）に勝てぬゆえ、時には『七割で良し！』といたし候。完璧を待たぬが知恵者の心得と覚えたり！";
         advice2 = "おお、そなた、人を支えるその優しき心根、まさに菩薩のごとし！されど、あまりに『良い人』ばかりでは、己の意志が薄れてしまうぞ。たまには己が本当にしたきこと、胸に手を当て、己を見つめることも大切ぞ！";
         advice3 = "おお、そなたのアイディア、まことに天晴れじゃ！されど、あまりに早馬のごとく駆けるゆえ、周囲の者が『待たれい！』と嘆いておるやもしれぬ。時には、その馬を抑え、皆で同じ道を歩むのも、粋なものじゃぞ。";
-        advice4 = "拙者、聞き申す！そなた、あたかも戦場に立つ武将のごとく、突き進むことばかり考えておるな？されど、時にはその足を止め、プロセスという道を振り返るのも一興ぞ。真のリーダーとは、皆を巻き込み、共に栄光の城へと突き進むものでござる！";
-        
+        advice4 = "拙者、聞き申す！そなた、あたかも戦場に立つ武将のごとく、突き進むことばかり考えておるな？されど、時にはその足を止め、プロセスという道を振り返るのも一興ぞ。真のリーダーとは、皆を巻き込み、共に栄光の城へと突き進むものでござる！";      
     } else if (num === 2) {
         coachName = "あなたの特別コーチは、来日２年目の「グレタ・ゼロエミ」です！"
         imagePath="./img/foreigner.png"; 
@@ -77,24 +73,20 @@ $("#btn").on("click", function () {
         advice4 = "オーケー、あなたサムライみたい、ぜんぜんまっすぐいく、でも、ワタシいう。プロセスもみる！リーダーシップ、これね、ただゴールいくじゃなくて、みんなつれていくことね。ゴールいくはオーケー。でも、チームもサムライみたい大事よ！";
     }
 
-    // コーチネームを表示する   →<p id="result"> coachName </p>
     $("#result").text(coachName).show();
-    // attr=attribute。src（画像のファイル場所）に、コーチの画像場所の属性を与えた
+    // コーチネームを表示する   →<p id="result"> coachName </p>
     $("#coachImage").attr("src", imagePath).show();
-    // コーチ挨拶を表示する     →<p id="hello"> helloMessage </p>
+    // attr=attribute。src（画像のファイル場所）に、コーチの画像場所の属性を与えた
     $("#hello").html(helloMessage).show();
+    // コーチ挨拶を表示する     →<p id="hello"> helloMessage </p>
 
 
-
-
-    // 質問
-    // 画像をクリックしたときの動作
+// Question Section
+// ================================================
     $("#coachImage").on("click", function () {
         $("#hello").hide();
-
     // 質問テキストを表示する
-    $("#question").text(questionText).show();
-        
+    $("#question").text(questionText).show();       
     // 回答を作る   append:付け加える
         $("#choices").append(`<button id="choice1" class="choice-btn">${answer1}</button>`);
         $("#choices").append(`<button id="choice2" class="choice-btn">${answer2}</button>`);
@@ -103,33 +95,23 @@ $("#btn").on("click", function () {
         // バッククォート（｀）を使うことで、変数の中身${answer}を表示できます！！！ややこしいぜ！
         // choice-btnはcssで使用
         // idはクリックイベントをするのに設定した
-        
-
-        
+         
         // 各回答ボタンにクリックイベントを設定し、助言を表示
-
         $("#choice1").on("click", function () {
             $("#questionContainer").hide();
             $("#hello").html(`${advice1}`).show();
         });
-
         $("#choice2").on("click", function () {
             $("#questionContainer").hide();
             $("#hello").html(`${advice2}`).show();
         });
-
         $("#choice3").on("click", function () {
             $("#questionContainer").hide();
             $("#hello").html(`${advice3}`).show();
         });
-
         $("#choice4").on("click", function () {
             $("#questionContainer").hide();
             $("#hello").html(`${advice4}`).show();
         });
-
-
     });
-
-
 })
