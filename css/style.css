@@ -51,6 +51,7 @@ button:hover {
 LOADING
 ================================================ */
 #loading {
+    /* display: none; */
     background-color: #eee;
     /*  --light-grey: #eee; */
     position: fixed;
@@ -62,6 +63,7 @@ LOADING
     place-items: center;
 }
 #loading-screen {
+    /* display: none; */
     background-color: #d5edeb;
     /* --light-green: #d5edeb; */
     position: fixed;
@@ -69,11 +71,12 @@ LOADING
     z-index: 9998;
     translate: 0 100vh;
     /* cssを横x,縦yに動かすプロパティ
-    　　横(x=0)に動かず、縦（y=100vp)に
+    横(x=0)に動かず、縦（y=100vp)に
     画面全体の高さ(viewport height）下に動かす（見えず）
     */
 }
 #loading-text {
+    /* display: none; */
     font-size: 32px;
     font-family:  Oswald, sans-serif;
 }

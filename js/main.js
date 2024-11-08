@@ -1,6 +1,5 @@
-/*
-ローディングから画面遷移
-================================================ */
+// LOADING
+// ================================================
 const loadingAreaGrey = document.querySelector('#loading');
 // 「loading」というidには、cssがあたっている。灰の背景色
 const loadingAreaGreen = document.querySelector('#loading-screen');
@@ -67,13 +66,14 @@ window.addEventListener('load', () => {
 });
 
 
-
 // Coach Summoning Section
 // ================================================
 $("#btn").on("click", function () {
     $("h1").hide();
     $("#btn").hide();  
     // $("#loading").show();
+    // $("#loading-screen").show();
+    // $("#loading-text").show();
 
     // Math.floorは、切り捨てて整数化させる関数
     // Math.random()は、０以上１未満の小数をランダムに生成する関数
