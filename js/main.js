@@ -1,79 +1,9 @@
-// LOADING
-// ================================================
-const loadingAreaGrey = document.querySelector('#loading');
-// 「loading」というidには、cssがあたっている。灰の背景色
-const loadingAreaGreen = document.querySelector('#loading-screen');
-// 「loading-screen」というidには、cssがあたっている。緑の背景色
-const loadingText = document.querySelector('#loading-text');
-// 「loading-text」というidには、cssがあたっている。
-
-window.addEventListener('load', () => {
-  // ローディング中（グレースクリーン）
-  loadingAreaGrey.animate(
-    // ↓↓↓動きの内容（透明度・反応させないように）
-    {
-      opacity: [1, 0],
-    //   透明度を1から0にして不透明にする
-      visibility: 'hidden',
-    //   クリックやホバーも含めて反応しないようにする
-    },
-    // ↓↓↓動きの詳細（1.2秒後に2秒かけて滑らかに終了後もそれを保つ）
-    {
-      duration: 2000,
-      delay: 1200,
-      easing: 'ease',
-      fill: 'forwards',
-    //   アニメーションが終わった後も位置や透明度が維持される
-    }
-  );
-
-  // ローディング中（薄緑スクリーン）
-  loadingAreaGreen.animate(
-    {
-      translate: ['0 100vh', '0 0', '0 -100vh']
-    //   横はそのまま、縦だけ、下（100vh)から上（-100vh）へ
-    },
-    {
-      duration: 2000,
-      delay: 800,
-      easing: 'ease',
-      fill: 'forwards',
-    }
-  );  
-
-  // ローディング中テキスト
-  loadingText.animate(
-    [
-      {
-        opacity: 1,
-        offset: .8  //80%
-        // アニメーションの80％まではずっと透明度1（見える）
-        // ここから透明になっていく（最後の20％で消える）
-      },
-      {
-        opacity: 0,
-        offset: 1  //100%
-        // アニメーションが100％の時に透明度0（消える）
-      },
-    ], 
-    {
-      duration: 1200,
-      easing: 'ease',
-      fill: 'forwards',
-    //   アニメーションが終わっても、透明0を保つ（消えたまま）
-    }
-  );
-});
-
-
 // Coach Summoning Section
 // ================================================
 $("#btn").on("click", function () {
     $("h1").hide();
-    $("#btn").hide();  
-    // $("#loading").show();
-    // $("#loading-screen").show();
-    // $("#loading-text").show();
+    $("#btn").hide();
+    $("#loading").show();
 
     // Math.floorは、切り捨てて整数化させる関数
     // Math.random()は、０以上１未満の小数をランダムに生成する関数
@@ -92,7 +22,6 @@ $("#btn").on("click", function () {
     let advice2 = "";
     let advice3 = "";
     let advice4 = "";
-
 
     if (num === 0) {
         coachName = "あなたの特別コーチは、関西人コーチ「浪速の銀治郎」です！";
@@ -144,16 +73,79 @@ $("#btn").on("click", function () {
         advice4 = "オーケー、あなたサムライみたい、ぜんぜんまっすぐいく、でも、ワタシいう。プロセスもみる！リーダーシップ、これね、ただゴールいくじゃなくて、みんなつれていくことね。ゴールいくはオーケー。でも、チームもサムライみたい大事よ！";
     }
 
-    $("#loading").show();
-    $("#result").text(coachName).show();
-    // コーチネームを表示する   →<p id="result"> coachName </p>
-    $("#coachImage").attr("src", imagePath).show();
-    // attr=attribute。src（画像のファイル場所）に、コーチの画像場所の属性を与えた
-    $("#hello").html(helloMessage).show();
-    // コーチ挨拶を表示する     →<p id="hello"> helloMessage </p>
+        $("#result").text(coachName).show();
+        // コーチネームを表示する   →<p id="result"> coachName </p>
+        $("#coachImage").attr("src", imagePath).show();
+        // attr=attribute。src（画像のファイル場所）に、コーチの画像場所の属性を与えた
+        $("#hello").html(helloMessage).show();
+        // コーチ挨拶を表示する     →<p id="hello"> helloMessage </p>
 
 
+          // LOADING
+// ================================================
+const loadingAreaGrey = document.querySelector('#loading');
+// 「loading」というidには、cssがあたっている。灰の背景色
+const loadingAreaGreen = document.querySelector('#loading-screen');
+// 「loading-screen」というidには、cssがあたっている。緑の背景色
+const loadingText = document.querySelector('#loading-text');
+// 「loading-text」というidには、cssがあたっている。
 
+  // ローディング中（グレースクリーン）
+  loadingAreaGrey.animate(
+    // ↓↓↓動きの内容（透明度・反応させないように）
+    {
+      opacity: [1, 0],
+    //   透明度を1から0にして不透明にする
+      visibility: 'hidden',
+    //   クリックやホバーも含めて反応しないようにする
+    },
+    // ↓↓↓動きの詳細（1.2秒後に2秒かけて滑らかに終了後もそれを保つ）
+    {
+      duration: 4000,
+      delay: 2000,
+      easing: 'ease',
+      fill: 'forwards',
+    //   アニメーションが終わった後も位置や透明度が維持される
+    }
+  );
+
+  // ローディング中（薄緑スクリーン）
+  loadingAreaGreen.animate(
+    {
+      translate: ['0 100vh', '0 0', '0 -100vh']
+    //   横はそのまま、縦だけ、下（100vh)から上（-100vh）へ
+    },
+    {
+      duration: 4000,
+      delay: 1500,
+      easing: 'ease',
+      fill: 'forwards',
+    }
+  );  
+
+  // ローディング中テキスト
+  loadingText.animate(
+    [
+      {
+        opacity: 1,
+        offset: .8  //80%
+        // アニメーションの80％まではずっと透明度1（見える）
+        // ここから透明になっていく（最後の20％で消える）
+      },
+      {
+        opacity: 0,
+        offset: 1  //100%
+        // アニメーションが100％の時に透明度0（消える）
+      },
+    ], 
+    {
+      duration: 3000,
+      easing: 'ease',
+      fill: 'forwards',
+    //   アニメーションが終わっても、透明0を保つ（消えたまま）
+    }
+  );
+// });
 
 
 // Question Section

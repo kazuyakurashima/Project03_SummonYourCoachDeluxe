@@ -13,11 +13,11 @@ body {
 h1 {
     color: #4F4F4F;
     font-size: 36px;
-    margin: 50px 0;
+    margin: 500px 0px 200px 0px;
 }
 button {
     color:#4F4F4F;
-    font-size: 24px;
+    font-size: 30px;
     cursor: pointer;
     margin: 50px;
     padding: 10px 40px;
@@ -25,9 +25,14 @@ button {
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: center;
+    font-family: Georgia, serif;
+    transition: transform 0.3s ease;
+    /* 0.3行で滑らかに変更。 */
 }
 button:hover {
     background-color: #ccc;
+    transform: scale(1.05);
+    /* ホバー時に少し拡大 */
 }
 .view {
     width: 75%;
@@ -51,7 +56,7 @@ button:hover {
 LOADING
 ================================================ */
 #loading {
-    /* display: none; */
+    display: none;
     background-color: #eee;
     /*  --light-grey: #eee; */
     position: fixed;
@@ -59,11 +64,9 @@ LOADING
     inset: 0;
     /* 画面全体を覆う＝(top:0;rigth:0;botto:0;left:0;） */
     z-index: 9999;
-    display: grid;
     place-items: center;
 }
 #loading-screen {
-    /* display: none; */
     background-color: #d5edeb;
     /* --light-green: #d5edeb; */
     position: fixed;
@@ -76,9 +79,9 @@ LOADING
     */
 }
 #loading-text {
-    /* display: none; */
-    font-size: 32px;
-    font-family:  Oswald, sans-serif;
+    font-size: 36px;
+    font-family: Georgia, serif;
+    margin: 500px;
 }
 
 /*
