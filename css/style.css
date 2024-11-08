@@ -47,6 +47,36 @@ button:hover {
     /* ホバー時に少し拡大 */
 }
 
+/*
+LOADING
+================================================ */
+#loading {
+    background-color: #eee;
+    /*  --light-grey: #eee; */
+    position: fixed;
+    /* 背景画像を固定表示 */
+    inset: 0;
+    /* 画面全体を覆う＝(top:0;rigth:0;botto:0;left:0;） */
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+}
+#loading-screen {
+    background-color: #d5edeb;
+    /* --light-green: #d5edeb; */
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    translate: 0 100vh;
+    /* cssを横x,縦yに動かすプロパティ
+    　　横(x=0)に動かず、縦（y=100vp)に
+    画面全体の高さ(viewport height）下に動かす（見えず）
+    */
+}
+#loading-text {
+    font-size: 32px;
+    font-family:  Oswald, sans-serif;
+}
 
 /*
 Question Section
