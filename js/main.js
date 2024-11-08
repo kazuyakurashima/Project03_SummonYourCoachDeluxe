@@ -24,7 +24,7 @@ $("#btn").on("click", function () {
     let advice4 = "";
 
     if (num === 0) {
-        coachName = "あなたの特別コーチは、関西人コーチ「浪速の銀治郎」です！";
+        coachName = "あなたの特別コーチは、関西人「浪速の銀治郎」です！";
         imagePath = "./img/kansai.png";
         helloMessage = "まいど！銀治郎やで、よろしくな！ <br>" + 
                        "ほんで、ちょっとつ質問に答えてくれたらええからな〜。<br>" +
