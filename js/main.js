@@ -101,8 +101,8 @@ const loadingText = document.querySelector('#loading-text');
     },
     // ↓↓↓動きの詳細（1.2秒後に2秒かけて滑らかに終了後もそれを保つ）
     {
-      duration: 4000,
-      delay: 2000,
+      duration: 4400,
+      delay: 2200,
       easing: 'ease',
       fill: 'forwards',
     //   アニメーションが終わった後も位置や透明度が維持される
@@ -116,8 +116,8 @@ const loadingText = document.querySelector('#loading-text');
     //   横はそのまま、縦だけ、下（100vh)から上（-100vh）へ
     },
     {
-      duration: 4000,
-      delay: 1500,
+      duration: 4400,
+      delay: 2200,
       easing: 'ease',
       fill: 'forwards',
     }
@@ -139,7 +139,7 @@ const loadingText = document.querySelector('#loading-text');
       },
     ], 
     {
-      duration: 3000,
+      duration: 4000,
       easing: 'ease',
       fill: 'forwards',
     //   アニメーションが終わっても、透明0を保つ（消えたまま）
